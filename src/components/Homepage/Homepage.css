@@ -1,0 +1,29 @@
+
+.topdiv {
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  height: auto;
+  text-align: center;
+}
+
+.col1 {
+  flex-shrink: 1;
+  height:auto;
+  background: #373737;
+}
+
+.col2 {
+  flex-shrink: 1;
+  height:400px;
+  background:#DCD0C0;
+}
+
+.col3 {
+  height:300px;
+}
+
+.responsive {
+    width: 100%;
+    height: 100%;
+}
