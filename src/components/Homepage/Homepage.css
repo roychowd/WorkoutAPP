@@ -19,13 +19,21 @@
 }
 
 .col2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
   flex-shrink: 1;
-  height:400px;
-  background:#373737;
+  height:500px;
+  background:#141414;
 }
 
 .col3 {
-  height:300px
+  height:150px;
+  background:#C0b283;
+  display: flex;
+  align-items:  center;
+  flex-direction: column;
 }
 
 .FormFontColor {
@@ -35,3 +43,23 @@
 .bg-black {
   color:#C0B283;
 }
+
+
+.peptalk {
+  color:#C0B283;
+}
+
+.pepList {
+  list-style-type:none;
+  color:white;
+}
+/* Active state */
+.gitLogo {
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

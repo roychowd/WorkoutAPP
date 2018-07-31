@@ -17,19 +17,32 @@ ul.topnav {
     padding: 0;
     overflow: hidden;
     background-color: #000;
+    height:auto;
+    transition: .7s
 }
+
+ul {
+  position: sticky;
+  top:0;
+  z-index: 500;
+}
+
 
 ul.topnav li {float: left;}
 
 ul.topnav li a {
     display: block;
-    color: white;
+    color: #C0b283;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #C0B283;}
+ul.topnav li a:hover:not(.active) {
+  transition: .7s;
+  transition-timing-function: ease;
+  background-color: #373737;
+}
 
 
 
@@ -38,4 +51,14 @@ ul.topnav li.right {float: right;}
 @media screen and (max-width: 600px){
     ul.topnav li.right,
     ul.topnav li {float: none;}
+}
+
+
+.right-end {
+  padding-top: 15px;
+}
+
+.logo {
+  max-width:25%;
+  max-height:15%;
 }
