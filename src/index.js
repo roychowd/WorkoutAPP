@@ -5,7 +5,7 @@ import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import registerServiceWorker from './registerServiceWorker';
-
+import 'tachyons';
 
 ReactDOM.render(
   <BrowserRouter>
