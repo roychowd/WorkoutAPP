@@ -34,6 +34,7 @@
   display: flex;
   align-items:  center;
   flex-direction: column;
+  justify-content: center;
 }
 
 .FormFontColor {
@@ -47,11 +48,17 @@
 
 .peptalk {
   color:#C0B283;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .pepList {
   list-style-type:none;
   color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* Active state */
 .gitLogo {
@@ -63,3 +70,6 @@
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.bottomhead {
+}

@@ -59,7 +59,7 @@ const Homepage = () => {
       </div>
       {/* //==============Third SECTION==========// */}
       <div className='col3'>
-        <h3>Created by <a href='https://github.com/AnkushSharma2698'>Ankush Sharma</a> and <a href='https://github.com/roychowd'>Dhruba Chowdhury</a> </h3>
+        <h3 className='bottomhead'>Created by <a href='https://github.com/AnkushSharma2698'>Ankush Sharma</a> and <a href='https://github.com/roychowd'>Dhruba Chowdhury</a> </h3>
         <a href='https://github.com/roychowd/WorkoutAPP'><img className='gitLogo pointer' src={GitLogo}/></a>
       </div>
     </div>
