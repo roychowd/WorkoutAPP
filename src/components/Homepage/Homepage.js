@@ -3,10 +3,11 @@ import Navbar from '../Navbar/Navbar';
 import './Homepage.css';
 import GitLogo from './GitLogo.png';
 
+var loggedIn=false;
 const Homepage = () => {
   return(
     <div className='topdiv'>
-      <Navbar className='navbar'/>
+      <Navbar loggedIn={loggedIn} className='navbar'/>
       {/* //==========HERE IS THE FIRST SECTION===========// */}
       <div className='col1'>
         {/* //===========HERE IS WHERE THE SIGN IN FORM IS DISPLAYED=======// */}
@@ -26,7 +27,7 @@ const Homepage = () => {
             </fieldset>
             <div className="">
               {/* //Change this to a button pls */}
-              <button href='/Dashboard' href='/Dashboard' className="b ph3 pv2 input-reset ba b--black  bg-black grow pointer f6 dib datButton" type='submit'>Sign In </button>
+              <button href='/Dashboard' className="b ph3 pv2 input-reset ba b--black  bg-black grow pointer f6 dib datButton" type='submit'>Sign In </button>
             </div>
             <div className="lh-copy mt3 FormFontColor">
               <a href="#0" class="f6 link  dim FormFontColor db">Sign up</a>
@@ -38,7 +39,7 @@ const Homepage = () => {
       {/* //======SECOND BANNER========// */}
       <div className='col2'>
         <h2 className='peptalk'>Being able to track your Foods and Excercise is the key to achieving</h2>
-        <h1 className='peptalk' style={{color:'white'}}>Your Fitness Goals!</h1>
+        <h1 className='peptalk' style={{color:'white'}}>Your Fitness Goals</h1>
         <h4 className='peptalk'>We wish to bring the message of a healthy lifestyle to the students of the University of Alberta, and provide them with the neccessary tools to do so!
         </h4>
         <h4 className='peptalk' >This app can help you:</h4>

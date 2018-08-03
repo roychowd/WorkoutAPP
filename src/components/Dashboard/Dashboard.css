@@ -1,0 +1,19 @@
+.TheTopdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+
+
+/* .btn-secondary {
+  background-color:#C0B283 !important;
+} */

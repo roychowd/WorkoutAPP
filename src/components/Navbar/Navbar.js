@@ -3,16 +3,26 @@ import './Navbar.css';
 import WorkoutLogo from './WorkoutAppLogo3.png';
 import $ from 'jquery';
 
-class Navbar extends Component {
-  render() {
-    return(
+
+const Navbar = (props) => {
+    if (!props.loggedIn) {
+      return(
       <ul className='topnav'>
         <li className='logoting'><img  className ='logo' src={WorkoutLogo}/></li>
         <li className='right right-end item'><a href="#about">Sign Up</a></li>
         <li className='right right-end item'><a href="#contact">About</a></li>
       </ul>
-    )
-  }
+      )
+    } else {
+      return (
+      <ul className='topnav'>
+        <li className='logoting'><img  className ='logo' src={WorkoutLogo}/></li>
+        <li className='right right-end item'><a href="/">Sign Out</a></li>
+        <li className='right right-end item'><a href="#contact">Profile</a></li>
+        <li className='right right-end item'><a href="#contact">Calendar</a></li>
+      </ul>
+      )
+    }
 }
 
 
