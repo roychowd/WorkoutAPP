@@ -9,7 +9,7 @@ const Navbar = (props) => {
       return(
       <ul className='topnav'>
         <li className='logoting'><img  className ='logo' src={WorkoutLogo}/></li>
-        <li className='right right-end item'><a href="#about">Sign Up</a></li>
+        <li className='right right-end item'><a href="/Signup">Sign Up</a></li>
         <li className='right right-end item'><a href="#contact">About</a></li>
       </ul>
       )

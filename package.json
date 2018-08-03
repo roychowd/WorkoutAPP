@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "group": "^1.0.2",
     "jquery": "^3.3.1",
     "rc-progress": "^2.2.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-transition": "^1.0.3",
+    "react-transition-group": "^2.4.0",
     "tachyons": "^4.11.1"
   },
   "scripts": {

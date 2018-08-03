@@ -1,16 +1,18 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Dashboard.css'
-import { Line, Circle } from 'rc-progress';
 
 var loggedIn=true;
+var calories = Math.floor(((1000/2000)*100));
+var calorieString = calories.toString() + "%";
+
 const Dashboard = (props) => {
   return(
     <div className='TheTopdiv'>
       <Navbar loggedIn={loggedIn}/>
-      <div>
-        <Line percent="10" strokeWidth="4" strokeColor="#D3D3D3" />
-        <Circle percent="10" strokeWidth="4" strokeColor="#D3D3D3" />
+      <h5 className='calGoal'>Calorie Goal Progress:</h5>
+      <div className='progress barTing'>
+        <div className='progress-bar bg-success progress-bar-striped progress-bar-animated' style={{width:`${calorieString}`,height:'20px'}}>{calorieString}</div>
       </div>
       <div class="row footer">
           <div class="col-sm-12 text-center btn-group">
