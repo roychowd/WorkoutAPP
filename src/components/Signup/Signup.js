@@ -16,6 +16,7 @@ class Signup extends Component{
         <header class="card-header headerting">
         	<a href="/" class="float-right btn btn-outline-primary mt-1">Log in</a>
         	<h4 class="card-title mt-2">Sign up</h4>
+          <small class="float-right form-text text-muted">If you already have an account </small>
         </header>
         <article class="card-body">
         <form>

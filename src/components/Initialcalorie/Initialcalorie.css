@@ -51,7 +51,7 @@ h2 {
 }
 
 .activityList .activityItem:hover label{
-	color: #FFFFFF;
+	color: #000;
 }
 
 .activityList .activityItem .check{
@@ -69,7 +69,7 @@ h2 {
 }
 
 .activityList .activityItem:hover .check {
-  border: 5px solid #FFFFFF;
+  border: 5px solid #000;
 }
 
 .activityList .activityItem .check::before {

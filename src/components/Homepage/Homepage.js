@@ -35,8 +35,8 @@ const Homepage = () => {
               <button href='/Dashboard' className="b ph3 pv2 input-reset ba b--black  bg-black grow pointer f6 dib datButton" type='submit'>Sign In </button>
             </div>
             <div className="lh-copy mt3 FormFontColor">
-              <a href="/Signup" class="f6 fw8 link  dim FormFontColor db">Sign up</a>
-              <a href="#0" class="f6  fw8 link dim FormFontColor db">Forgot your password?</a>
+              {/* <a href="/Signup" class="f6 fw8 link  dim FormFontColor db">Sign up</a> */}
+              {/* <a href="#0" class="f6  fw8 link dim FormFontColor db">Forgot your password?</a> */}
             </div>
           </form>
         </main>
@@ -84,10 +84,11 @@ $(document).ready(function() {
         $('.circle').each( function(i){
 
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var middle_of_object = ($(this).offset().top + $(this).outerHeight())-100;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
 
             /* If the object is completely visible in the window, fade it it */
-            if( bottom_of_window > bottom_of_object ){
+            if( bottom_of_window > middle_of_object ){
 
                 $(this).animate({'opacity':'1'},500);
 
