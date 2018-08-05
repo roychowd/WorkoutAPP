@@ -12,7 +12,7 @@ const Dashboard = (props) => {
       <Navbar loggedIn={loggedIn}/>
       <h5 className='calGoal'>Calorie Goal Progress:</h5>
       <div className='progress barTing'>
-        <div className='progress-bar bg-success progress-bar-striped progress-bar-animated' style={{width:`${calorieString}`,height:'20px'}}>{calorieString}</div>
+        <div className='progress-bar  progress-bar-striped progress-bar-animated' style={{width:`${calorieString}`,height:'20px'}}>{calorieString}</div>
       </div>
       <div class="row footer">
           <div class="col-sm-12 text-center btn-group">

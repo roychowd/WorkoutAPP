@@ -18,7 +18,7 @@ const Navbar = (props) => {
       <ul className='topnav'>
         <li className='logoting'><img  className ='logo' src={WorkoutLogo}/></li>
         <li className='right right-end item'><a href="/">Sign Out</a></li>
-        <li className='right right-end item'><a href="#contact">Profile</a></li>
+        <li className='right right-end item'><a href="/Profile">Profile</a></li>
         <li className='right right-end item'><a href="#contact">Calendar</a></li>
       </ul>
       )
