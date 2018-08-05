@@ -91,13 +91,13 @@ class Homepage extends Component {
               </fieldset>
               <div className="">
                 {/* //Change this to a button pls */}
-                <button
-                  href="/Dashboard"
+                <Link
+                  to='/Dashboard'
                   className="b ph3 pv2 input-reset ba b--black  bg-black grow pointer f6 dib datButton"
                   onClick={this.onSubmitSignIn}
                 >
                   Sign In{" "}
-                </button>
+                </Link>
               </div>
               <div className="lh-copy mt3 FormFontColor">
                 {/* <a href="/Signup" class="f6 fw8 link  dim FormFontColor db">Sign up</a> */}
