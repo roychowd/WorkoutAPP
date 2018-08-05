@@ -94,7 +94,7 @@ class Homepage extends Component {
                 <button
                   href="/Dashboard"
                   className="b ph3 pv2 input-reset ba b--black  bg-black grow pointer f6 dib datButton"
-                  type="submit"
+                  onClick={this.onSubmitSignIn}
                 >
                   Sign In{" "}
                 </button>
