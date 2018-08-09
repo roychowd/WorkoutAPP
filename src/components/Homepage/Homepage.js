@@ -5,6 +5,8 @@ import GitLogo from "./GitLogo.png";
 import Dumbell from "./dumbbell.png";
 import Burger from "./burger.png";
 import Runner from "./runner.png";
+import { Link } from "react-router-dom";
+import axios from "axios";
 //importing jquery;
 import $ from "jquery";
 
@@ -28,22 +30,15 @@ class Homepage extends Component {
     console.log(this.state.signInPassword);
   };
 
-  onSubmitSignIn = () => {
-    fetch("http://localhost:3000/signin", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
+  onSubmitSignIn = e => {
+    axios
+      .post("http://localhost:5000/auth/getToken", {
         email: this.state.signInEmail,
         password: this.state.signInPassword
       })
-    })
-      .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          console.log("signed in");
-        } else {
-          alert("Error Loggin In! Invalid Credentials");
-        }
+      .then(res => {
+        console.log(res.data);
+        localStorage.setItem("jwtToken", res.data);
       });
   };
 
@@ -92,7 +87,7 @@ class Homepage extends Component {
               <div className="">
                 {/* //Change this to a button pls */}
                 <Link
-                  to='/Dashboard'
+                  to="/Dashboard"
                   className="b ph3 pv2 input-reset ba b--black  bg-black grow pointer f6 dib datButton"
                   onClick={this.onSubmitSignIn}
                 >
