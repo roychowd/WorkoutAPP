@@ -39,7 +39,6 @@ class Homepage extends Component {
 
   onSubmitSignIn = e => {
     // required for signing in
-    e.preventDefault(); // may need to remove this
     const user = {
       email: this.state.credentials.email,
       password: this.state.credentials.password
@@ -151,7 +150,7 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+//export default Homepage;
 
 //Animation to show on scroll
 // $(document).scroll(function() {
@@ -178,8 +177,14 @@ $(document).ready(function() {
   });
 });
 
-// Homepage.propTypes = {
+Homepage.propTypes = {
+  loginUser: PropTypes.func.isRequired
+};
 
-// }
-
-//export default connect(null, mapDispatchToProps)(Homepage);
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Homepage);

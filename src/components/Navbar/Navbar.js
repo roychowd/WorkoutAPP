@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Navbar.css";
 import WorkoutLogo from "./WorkoutAppLogo3.png";
+import LOGOUT from "./logout";
 import $ from "jquery";
 
 const Navbar = props => {
@@ -19,29 +20,7 @@ const Navbar = props => {
       </ul>
     );
   } else {
-    return (
-      <ul className="topnav">
-        <li className="logoting">
-          <img className="logo" src={WorkoutLogo} />
-        </li>
-        <li className="right right-end item">
-          <a
-            href="/"
-            onClick={e => {
-              localStorage.removeItem("jwtToken");
-            }}
-          >
-            Sign Out
-          </a>
-        </li>
-        <li className="right right-end item">
-          <a href="/Profile">Profile</a>
-        </li>
-        <li className="right right-end item">
-          <a href="#contact">Calendar</a>
-        </li>
-      </ul>
-    );
+    return <LOGOUT />;
   }
 };
 

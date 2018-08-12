@@ -28,3 +28,14 @@ export const loginUser = user => dispatch => {
       });
     });
 };
+
+export const logoutUser = history => dispatch => {
+  localStorage.removeItem("jwtToken");
+  // delete the http header!
+  setAuthToken(false);
+  dispatch({
+    type: SET_CURRENT_USER,
+    payload: {}
+  });
+  history.push("/");
+};
