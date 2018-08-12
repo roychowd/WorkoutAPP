@@ -9,37 +9,42 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 //importing jquery;
 import $ from "jquery";
+import PropTypes from "prop-types";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions";
 
 var loggedIn = false;
 class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInEmail: "",
-      signInPassword: ""
+      credentials: {
+        email: "",
+        password: ""
+      }
     };
+
+    // required for our component to know the reference for 'this'
+    this.onChange = this.onChange.bind(this);
+    this.onSubmitSignIn = this.onSubmitSignIn.bind(this);
   }
 
-  onEmailChange = event => {
-    this.setState({ signInEmail: event.target.value });
-    console.log(this.state.signInEmail);
-  };
-
-  onPasswordChange = event => {
-    this.setState({ signInPassword: event.target.value });
-    console.log(this.state.signInPassword);
+  onChange = event => {
+    // handles the password and username text fields on the form
+    const Newcredentials = this.state.credentials;
+    Newcredentials[event.target.name] = event.target.value;
+    return this.setState({ credentials: Newcredentials });
   };
 
   onSubmitSignIn = e => {
-    axios
-      .post("http://localhost:5000/auth/getToken", {
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
-      .then(res => {
-        console.log(res.data);
-        localStorage.setItem("jwtToken", res.data);
-      });
+    // required for signing in
+    e.preventDefault(); // may need to remove this
+    const user = {
+      email: this.state.credentials.email,
+      password: this.state.credentials.password
+    };
+    this.props.loginUser(user);
   };
 
   render() {
@@ -63,9 +68,10 @@ class Homepage extends Component {
                   <input
                     className="pa2 input-reset ba bg-transparent bg-black hover-bg-black hover-white w-100"
                     type="email"
-                    name="email-address"
+                    name="email"
                     id="email-address"
-                    onChange={this.onEmailChange}
+                    onChange={this.onChange}
+                    value={this.state.credentials.email}
                   />
                 </div>
                 <div className="mv3">
@@ -77,7 +83,8 @@ class Homepage extends Component {
                     type="password"
                     name="password"
                     id="password"
-                    onChange={this.onPasswordChange}
+                    onChange={this.onChange}
+                    value={this.state.credentials.password}
                   />
                 </div>
                 <label className="pa0 ma0 lh-copy f6 fw8 pointer">
@@ -170,3 +177,9 @@ $(document).ready(function() {
     });
   });
 });
+
+// Homepage.propTypes = {
+
+// }
+
+//export default connect(null, mapDispatchToProps)(Homepage);
