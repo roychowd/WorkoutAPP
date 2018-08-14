@@ -35,7 +35,7 @@ class Signup extends Component{
         		<input type="email" class="form-control" placeholder=""/>
         		<small class="form-text text-muted">We'll never share your email with anyone else.</small>
         	</div>
-        	<div class="form-group">
+        	{/* <div class="form-group">
         			<label class="form-check form-check-inline">
         		  <input class="form-check-input" type="radio" name="gender" value="option1"/>
         		  <span class="form-check-label"> Male </span>
@@ -44,7 +44,7 @@ class Signup extends Component{
         		  <input class="form-check-input" type="radio" name="gender" value="option2"/>
         		  <span class="form-check-label"> Female</span>
         		</label>
-        	</div>
+        	</div> */}
         	<div class="form-group">
         		<label>Create password</label>
         	    <input class="form-control" type="password"/>

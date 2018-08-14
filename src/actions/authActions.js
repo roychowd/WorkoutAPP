@@ -3,7 +3,7 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 import setAuthToken from "../setAuthToken";
 import jwt_decode from "jwt-decode";
 
-export const loginUser = user => dispatch => {
+export const loginUser = (user, history) => dispatch => {
   axios
     .post("http://localhost:5000/auth/getToken", user)
     .then(res => {
@@ -19,6 +19,7 @@ export const loginUser = user => dispatch => {
         type: SET_CURRENT_USER,
         payload: decoded
       });
+      history.push("/Dashboard");
     })
     .catch(err => {
       // may need to change this. will go back to it later

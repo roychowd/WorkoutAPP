@@ -43,7 +43,7 @@ class Homepage extends Component {
       email: this.state.credentials.email,
       password: this.state.credentials.password
     };
-    this.props.loginUser(user);
+    this.props.loginUser(user, this.props.history);
   };
 
   render() {
