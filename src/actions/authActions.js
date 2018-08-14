@@ -23,10 +23,11 @@ export const loginUser = (user, history) => dispatch => {
     })
     .catch(err => {
       // may need to change this. will go back to it later
-      dispatch({
-        type: GET_ERRORS,
-        payload: "ERROR" // change to response.
-      });
+      alert("INVALID CREDENTIALS");
+      // dispatch({
+      //   type: GET_ERRORS,
+      //   payload: "ERROR" // change to response.
+      // });
     });
 };
 

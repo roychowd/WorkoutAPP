@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from "../actions/types";
+import { SET_CURRENT_USER, GET_ERRORS } from "../actions/types";
 
 // a helper function used
 const isEmpty = value => {
