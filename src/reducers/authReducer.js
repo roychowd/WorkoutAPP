@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER, GET_ERRORS } from "../actions/types";
+import { SET_CURRENT_USER, GET_ERRORS, REGISTER_USER } from "../actions/types";
 
 // a helper function used
 const isEmpty = value => {
@@ -16,8 +16,15 @@ const initalState = {
 };
 
 export default function(state = initalState, action) {
+  console.log(action.type);
   switch (action.type) {
     case SET_CURRENT_USER:
+      return {
+        ...state,
+        isAuthenticated: !isEmpty(action.payload),
+        user: action.payload
+      };
+    case REGISTER_USER:
       return {
         ...state,
         isAuthenticated: !isEmpty(action.payload),

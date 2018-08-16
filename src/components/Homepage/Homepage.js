@@ -6,15 +6,13 @@ import Dumbell from "./dumbbell.png";
 import Burger from "./burger.png";
 import Runner from "./runner.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
 //importing jquery;
 import $ from "jquery";
 import PropTypes from "prop-types";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-
 var loggedIn = false;
+
 class Homepage extends Component {
   constructor(props) {
     super(props);
