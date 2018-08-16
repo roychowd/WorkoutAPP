@@ -30,7 +30,6 @@ class Initialcalorie extends Component {
   };
 
   onSubmit = event => {
-    event.preventDefault();
     let user = {
       params: {
         id: store.getState().auth.user.id
@@ -113,7 +112,7 @@ class Initialcalorie extends Component {
         </div>
         <div class="row hain">
           <Link
-            to="/Dashboard"
+            to="/"
             className="btn btn-primary btn-block bigbutton"
             onClick={this.onSubmit}
           >
