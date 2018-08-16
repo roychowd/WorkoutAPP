@@ -41,7 +41,6 @@ export const logoutUser = history => dispatch => {
 
 export const registerUser = (user, history) => dispatch => {
   axios.post("http://localhost:5000/auth/seedUser", user).then(res => {
-    console.log(res.data);
     dispatch({
       type: REGISTER_USER,
       payload: res.data

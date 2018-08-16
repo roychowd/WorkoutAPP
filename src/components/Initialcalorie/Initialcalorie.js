@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import "./Initialcalorie.css";
 import { Link } from "react-router-dom";
 import store from "../../store";
-// const Initialcalorie = () => {
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { updateDailyCal } from "../../actions/profileActions";
+
 class Initialcalorie extends Component {
   constructor(props) {
     super(props);
@@ -15,19 +18,23 @@ class Initialcalorie extends Component {
     store.subscribe(() => {
       // When state will be updated(in our case, when items will be fetched),
       // we will update local component state and force component to rerender
-      // with new data.
-      this.setState({ id: store.getState().id });
+      // with new data.)
+      this.setState({ id: store.getState().auth.user.id });
     });
   }
 
   onChange = event => {
+    console.log("The fucking shit is", store.getState().auth.user.id);
+
     this.setState({ [event.target.name]: event.target.value });
   };
 
   onSubmit = event => {
     event.preventDefault();
     let user = {
-      id: this.state.id,
+      params: {
+        id: store.getState().auth.user.id
+      },
       calories: this.state.calories
     };
     this.props.updateDailyCal(user, this.props.history);
@@ -121,4 +128,16 @@ class Initialcalorie extends Component {
   }
 }
 
-export default Initialcalorie;
+Initialcalorie.propTypes = {
+  updateDailyCal: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => {
+  auth: state.auth;
+  profile: state.profile;
+};
+
+export default connect(
+  mapStateToProps,
+  { updateDailyCal }
+)(Initialcalorie);
