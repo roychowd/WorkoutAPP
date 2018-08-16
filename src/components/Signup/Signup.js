@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import validateEmail from "../../helpers/validateEmail";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -13,7 +13,8 @@ class Signup extends Component {
         email: "",
         password: ""
       },
-      validEmail: true
+      validEmail: true,
+      route: ""
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -26,6 +27,7 @@ class Signup extends Component {
   };
 
   onSubmit = event => {
+    event.preventDefault();
     if (validateEmail(this.state.credentials.email)) {
       // dispatch it to redux reducer
       let user = {
@@ -36,6 +38,8 @@ class Signup extends Component {
       this.props.registerUser(user, this.props.history);
     } else {
       // if its a wrong message then i will need to inject jsx into the dom
+      this.setState({ route: "/signup" });
+
       alert("no");
     }
   };
@@ -100,13 +104,13 @@ class Signup extends Component {
                     />
                   </div>
                   <div class="form-group">
-									<Link
-                  to="/Initialcalorie"
-                  className="btn btn-primary btn-block"
-                  onClick={this.onSubmit}
-                >
-                  Register{" "}
-                </Link>
+                    <Link
+                      to={this.state.route}
+                      className="btn btn-primary btn-block"
+                      onClick={this.onSubmit}
+                    >
+                      Register{" "}
+                    </Link>
                     {/* <a
                       href="/Initialcalorie"
                       class="btn btn-primary btn-block"
