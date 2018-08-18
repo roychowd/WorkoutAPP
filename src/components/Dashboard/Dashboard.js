@@ -1,10 +1,15 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
+import {Link} from 'react-router-dom';
 import './Dashboard.css'
 
 var loggedIn=true;
 var calories = Math.floor(((1000/2000)*100));
 var calorieString = calories.toString() + "%";
+
+<Link
+  to="/CreateWorkPlan"
+  ></Link>
 
 const Dashboard = (props) => {
   return(
@@ -16,7 +21,7 @@ const Dashboard = (props) => {
       </div>
       <div class="row footer">
           <div class="col-sm-12 text-center btn-group">
-              <button id="btnSearch" class="btn btn-dark btn-md center-block" Style="width: 50%;" OnClick="btnSearch_Click" >Create Workout Plan</button>
+              <Link to="/CreateWorkPlan" id="btnSearch" class="btn btn-dark btn-md center-block" Style="width: 50%;">Create Workout Plan</Link>
                <button id="btnClear" class="btn btn-secondary btn-md center-block" Style="width: 50%;" OnClick="btnClear_Click" >Create Diet Plan</button>
            </div>
       </div>

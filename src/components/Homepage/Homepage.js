@@ -5,46 +5,43 @@ import GitLogo from "./GitLogo.png";
 import Dumbell from "./dumbbell.png";
 import Burger from "./burger.png";
 import Runner from "./runner.png";
+import { Link } from "react-router-dom";
 //importing jquery;
 import $ from "jquery";
-
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions";
 var loggedIn = false;
+
 class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signInEmail: "",
-      signInPassword: ""
+      credentials: {
+        email: "",
+        password: ""
+      }
     };
+
+    // required for our component to know the reference for 'this'
+    // this.onChange = this.onChange.bind(this);
+    // this.onSubmitSignIn = this.onSubmitSignIn.bind(this);
   }
 
-  onEmailChange = event => {
-    this.setState({ signInEmail: event.target.value });
-    console.log(this.state.signInEmail);
+  onChange = event => {
+    // handles the password and username text fields on the form
+    const Newcredentials = this.state.credentials;
+    Newcredentials[event.target.name] = event.target.value;
+    return this.setState({ credentials: Newcredentials });
   };
 
-  onPasswordChange = event => {
-    this.setState({ signInPassword: event.target.value });
-    console.log(this.state.signInPassword);
-  };
-
-  onSubmitSignIn = () => {
-    fetch("http://localhost:3000/signin", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
-    })
-      .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          console.log("signed in");
-        } else {
-          alert("Error Loggin In! Invalid Credentials");
-        }
-      });
+  onSubmitSignIn = e => {
+    // required for signing in
+    const user = {
+      email: this.state.credentials.email,
+      password: this.state.credentials.password
+    };
+    this.props.loginUser(user, this.props.history);
   };
 
   render() {
@@ -68,9 +65,10 @@ class Homepage extends Component {
                   <input
                     className="pa2 input-reset ba bg-transparent bg-black hover-bg-black hover-white w-100"
                     type="email"
-                    name="email-address"
+                    name="email"
                     id="email-address"
-                    onChange={this.onEmailChange}
+                    onChange={this.onChange}
+                    value={this.state.credentials.email}
                   />
                 </div>
                 <div className="mv3">
@@ -82,7 +80,8 @@ class Homepage extends Component {
                     type="password"
                     name="password"
                     id="password"
-                    onChange={this.onPasswordChange}
+                    onChange={this.onChange}
+                    value={this.state.credentials.password}
                   />
                 </div>
                 <label className="pa0 ma0 lh-copy f6 fw8 pointer">
@@ -92,7 +91,7 @@ class Homepage extends Component {
               <div className="">
                 {/* //Change this to a button pls */}
                 <Link
-                  to='/Dashboard'
+                  to="/Dashboard"
                   className="b ph3 pv2 input-reset ba b--black  bg-black grow pointer f6 dib datButton"
                   onClick={this.onSubmitSignIn}
                 >
@@ -149,7 +148,7 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage;
+//export default Homepage;
 
 //Animation to show on scroll
 // $(document).scroll(function() {
@@ -175,3 +174,15 @@ $(document).ready(function() {
     });
   });
 });
+
+Homepage.propTypes = {
+  loginUser: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Homepage);

@@ -1,28 +1,43 @@
 import React, { Component } from "react";
-import "./Navbar.css";
 import WorkoutLogo from "./WorkoutAppLogo3.png";
-import LOGOUT from "./logout";
+import "./Navbar.css";
 import $ from "jquery";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { logoutUser } from "../../actions/authActions";
 
-const Navbar = props => {
-  if (!props.loggedIn) {
+class logout extends Component {
+  constructor(props) {
+    super(props);
+    this.onSignout = this.onSignout.bind(this);
+  }
+
+  onSignout(event) {
+    event.preventDefault();
+    this.props.logoutUser(this.props.history);
+  }
+  render() {
     return (
       <ul className="topnav">
         <li className="logoting">
           <img className="logo" src={WorkoutLogo} />
         </li>
         <li className="right right-end item">
-          <a href="/Signup">Sign Up</a>
+          <a href="/" onClick={this.onSignout}>
+            Sign Out
+          </a>
         </li>
         <li className="right right-end item">
-          <a href="#contact">About</a>
+          <a href="/Profile">Profile</a>
+        </li>
+        <li className="right right-end item">
+          <a href="#contact">Calendar</a>
         </li>
       </ul>
     );
-  } else {
-    return <LOGOUT />;
   }
-};
+}
 
 $(document).ready(function() {
   $(window).scroll(function() {
@@ -39,4 +54,11 @@ $(document).ready(function() {
   });
 });
 
-export default Navbar;
+logout.propTypes = {
+  logoutUser: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { logoutUser }
+)(withRouter(logout));
