@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Signup from "./components/Signup/Signup";
 import Initialcalorie from "./components/Initialcalorie/Initialcalorie";
 import Profile from "./components/Profile/Profile";
+import WorkoutPlan from "./components/WorkoutPlan/WorkoutPlan";
 import "./App.css";
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         <AuthenticatedRoute path="/Dashboard" component={Dashboard} />
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/Initialcalorie" component={Initialcalorie} />
+        <AuthenticatedRoute exact path="/CreateWorkPlan" component={WorkoutPlan}/>
         <AuthenticatedRoute exact path="/Profile" component={Profile} />
       </Switch>
     );

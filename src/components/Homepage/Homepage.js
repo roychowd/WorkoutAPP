@@ -24,8 +24,8 @@ class Homepage extends Component {
     };
 
     // required for our component to know the reference for 'this'
-    this.onChange = this.onChange.bind(this);
-    this.onSubmitSignIn = this.onSubmitSignIn.bind(this);
+    // this.onChange = this.onChange.bind(this);
+    // this.onSubmitSignIn = this.onSubmitSignIn.bind(this);
   }
 
   onChange = event => {
