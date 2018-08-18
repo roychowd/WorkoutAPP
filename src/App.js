@@ -7,6 +7,7 @@ import Signup from "./components/Signup/Signup";
 import Initialcalorie from "./components/Initialcalorie/Initialcalorie";
 import Profile from "./components/Profile/Profile";
 import WorkoutPlan from "./components/WorkoutPlan/WorkoutPlan";
+import DietPlan from './components/DietPlan/DietPlan';
 import "./App.css";
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/Initialcalorie" component={Initialcalorie} />
         <AuthenticatedRoute exact path="/CreateWorkPlan" component={WorkoutPlan}/>
+        <AuthenticatedRoute exact path="/CreateDietPlan" component={DietPlan}/>
         <AuthenticatedRoute exact path="/Profile" component={Profile} />
       </Switch>
     );

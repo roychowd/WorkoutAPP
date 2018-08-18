@@ -22,7 +22,7 @@ const Dashboard = (props) => {
       <div class="row footer">
           <div class="col-sm-12 text-center btn-group">
               <Link to="/CreateWorkPlan" id="btnSearch" class="btn btn-dark btn-md center-block" Style="width: 50%;">Create Workout Plan</Link>
-               <button id="btnClear" class="btn btn-secondary btn-md center-block" Style="width: 50%;" OnClick="btnClear_Click" >Create Diet Plan</button>
+              <Link to="/CreateDietPlan" id="btnClear" class="btn btn-secondary btn-md center-block" Style="width: 50%;" OnClick="btnClear_Click" >Create Diet Plan</Link>
            </div>
       </div>
     </div>
