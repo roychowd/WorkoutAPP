@@ -61,16 +61,16 @@ class Signup extends Component {
               </header>
               <article class="card-body">
                 <form>
-                  {/* <div class="form-row">
-        		<div class="col form-group">
-        			<label>First name </label>
-        		  	<input type="text" class="form-control" placeholder=""/>
-        		</div>
-        		<div class="col form-group">
-        			<label>Last name</label>
-        		  	<input type="text" class="form-control" placeholder=" "/>
-        		</div>
-        	</div> */}
+                  <div class="form-row">
+                		<div class="col form-group">
+                			<label>First name </label>
+                		  	<input type="text" class="form-control" placeholder=""/>
+                		</div>
+                		<div class="col form-group">
+                			<label>Last name</label>
+                		  	<input type="text" class="form-control" placeholder=" "/>
+                		</div>
+                	</div>
                   <div class="form-group">
                     <label>Email address</label>
                     <input
@@ -84,16 +84,6 @@ class Signup extends Component {
                       We'll never share your email with anyone else.
                     </small>
                   </div>
-                  {/* <div class="form-group">
-        			<label class="form-check form-check-inline">
-        		  <input class="form-check-input" type="radio" name="gender" value="option1"/>
-        		  <span class="form-check-label"> Male </span>
-        		</label>
-        		<label class="form-check form-check-inline">
-        		  <input class="form-check-input" type="radio" name="gender" value="option2"/>
-        		  <span class="form-check-label"> Female</span>
-        		</label>
-        	</div> */}
                   <div class="form-group">
                     <label>Create password</label>
                     <input
