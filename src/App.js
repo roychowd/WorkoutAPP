@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Homepage from "./components/Homepage/Homepage";
 import Dashboard from "./components/Dashboard/Dashboard";
