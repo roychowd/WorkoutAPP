@@ -2,7 +2,6 @@ import axios from "axios";
 import { SET_CURRENT_USER, REGISTER_USER } from "./types";
 import setAuthToken from "../setAuthToken";
 import jwt_decode from "jwt-decode";
-
 export const loginUser = (user, history) => dispatch => {
   axios
     .post("http://localhost:5000/auth/getToken", user)
@@ -32,6 +31,7 @@ export const logoutUser = history => dispatch => {
   localStorage.removeItem("jwtToken");
   // delete the http header!
   setAuthToken(false);
+
   dispatch({
     type: SET_CURRENT_USER,
     payload: {}
@@ -48,7 +48,6 @@ export const registerUser = (user, history) => dispatch => {
     history.push("/Initialcalorie");
   });
 };
-
 
 function setToken(token) {
   //set auth token to local storage and set it as a http header
