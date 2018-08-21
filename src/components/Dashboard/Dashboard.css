@@ -5,11 +5,17 @@
 }
 
 .footer {
-  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
+}
+
+@media screen and (max-width: 430px) {
+  .obi {
+    font-size: 6.5px;
+    text-align: center;
+  }
 }
 
 .barTing {
@@ -17,10 +23,11 @@
 }
 
 .calGoal {
-  color:black;
+  color: black;
   text-align: center;
   text-decoration: underline;
 }
+
 
 /* .btn-secondary {
   background-color:#C0B283 !important;

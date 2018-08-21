@@ -8,3 +8,8 @@ export const loadName = () => {
     return state.auth.user.firstName + " " + state.auth.user.lastName;
   }
 };
+
+export const loadCalories = () => {
+  let state = loadState();
+  return state.auth.user.calories;
+};
