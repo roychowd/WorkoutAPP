@@ -25,8 +25,8 @@ const Data2 = {
   labels: ["Calories-remaining", "Calories-Consumed"],
   datasets: [
     {
-      data: [cal, 2000-cal],
-      backgroundColor: ["#FF6384", "#36A2EB" ],
+      data: [cal, 2000 - cal],
+      backgroundColor: ["#FF6384", "#36A2EB"],
       hoverBackgroundColor: ["#FF6384", "#36A2EB"]
     }
   ]
@@ -45,22 +45,29 @@ const Dashboard = props => {
           {calorieString}
         </div>
       </div> */}
-      <div className="nutChart">
-        <Doughnut
-          data={Data}
-          width={250}
-          height={250}
-          options={{ maintainAspectRatio: false, responsive: true }}
-        />
+      <div className="row mt-5 mb-5">
+        <div className="col-lg-6">
+          <div>
+            <Doughnut
+              data={Data}
+              width={250}
+              height={250}
+              options={{ maintainAspectRatio: false, responsive: true }}
+            />
+          </div>
+        </div>
+        <div className="col-lg-6">
+          <div>
+            <Doughnut
+              data={Data2}
+              width={250}
+              height={250}
+              options={{ maintainAspectRatio: false, responsive: true }}
+            />
+          </div>
+        </div>
       </div>
-      <div>
-        <Doughnut
-          data={Data2}
-          width={250}
-          height={250}
-          options={{ maintainAspectRatio: false, responsive: true }}
-        />
-      </div>
+
       <div class="row footer">
         <div class="col-sm-12 text-center btn-group">
           <Link

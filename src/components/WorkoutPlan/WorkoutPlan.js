@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import "./WorkoutPlan.css";
 import rope from "./rope.jpg";
 import image1 from "./image1.png";
+import { Link } from "react-router-dom";
 const WorkoutPlan = () => {
   return (
     <div>
@@ -21,9 +22,10 @@ const WorkoutPlan = () => {
                   Search for specific exercises (or create your own) and add
                   them to your personal plan!
                 </p>
-                <button type="button float-right" class="btn btn-secondary">
-                  Secondary
-                </button>
+                <Link to="/addWorkout" id="addBtn" class="btn btn-secondary">
+                  {/* <button type="button float-right" class="btn btn-secondary"> */}
+                  Add
+                </Link>
               </div>
             </div>
           </div>
@@ -39,9 +41,12 @@ const WorkoutPlan = () => {
               <p className="card-text">
                 Click here to view your daily workout routine!
               </p>
-              <button type="button float-right" class="btn btn-primary">
-                Primary
-              </button>
+              <Link to="/viewWorkout" id="addBtn" class="btn btn-primary">
+                View
+              </Link>
+              {/* <button type="button float-right" class="btn btn-primary">
+                View
+              </button> */}
             </div>
           </div>
         </div>

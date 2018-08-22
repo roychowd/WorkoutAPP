@@ -6,7 +6,8 @@ import Signup from "./components/Signup/Signup";
 import Initialcalorie from "./components/Initialcalorie/Initialcalorie";
 import Profile from "./components/Profile/Profile";
 import WorkoutPlan from "./components/WorkoutPlan/WorkoutPlan";
-import DietPlan from './components/DietPlan/DietPlan';
+import DietPlan from "./components/DietPlan/DietPlan";
+import WorkoutAdd from "../src/components/WorkoutAdd/workoutAdd";
 import "./App.css";
 
 class App extends Component {
@@ -17,9 +18,15 @@ class App extends Component {
         <AuthenticatedRoute path="/Dashboard" component={Dashboard} />
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/Initialcalorie" component={Initialcalorie} />
-        <AuthenticatedRoute exact path="/CreateWorkPlan" component={WorkoutPlan}/>
-        <AuthenticatedRoute exact path="/CreateDietPlan" component={DietPlan}/>
+        <AuthenticatedRoute
+          exact
+          path="/CreateWorkPlan"
+          component={WorkoutPlan}
+        />
+        <AuthenticatedRoute exact path="/CreateDietPlan" component={DietPlan} />
         <AuthenticatedRoute exact path="/Profile" component={Profile} />
+        <AuthenticatedRoute exact path="/addWorkout" component={WorkoutAdd} />
+        {/* <AuthenticatedRoute exact path="/viewWorkout" component={WorkoutView} /> */}
       </Switch>
     );
   }

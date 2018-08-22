@@ -49,7 +49,7 @@ class Homepage extends Component {
       <div className="topdiv">
         <Navbar loggedIn={loggedIn} className="navbar" />
         {/* //==========HERE IS THE FIRST SECTION===========// */}
-        <div className="col1">
+        <div className="col1 img-fluid">
           {/* //===========HERE IS WHERE THE SIGN IN FORM IS DISPLAYED=======// */}
           <main className="pa4 80 FormFontColor">
             <form className="measure center">
