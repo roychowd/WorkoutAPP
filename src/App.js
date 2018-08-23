@@ -7,7 +7,7 @@ import Initialcalorie from "./components/Initialcalorie/Initialcalorie";
 import Profile from "./components/Profile/Profile";
 import WorkoutPlan from "./components/WorkoutPlan/WorkoutPlan";
 import DietPlan from "./components/DietPlan/DietPlan";
-import WorkoutAdd from "../src/components/WorkoutAdd/workoutAdd";
+import ExerciseView from "../src/components/ExerciseView/ExerciseView";
 import "./App.css";
 
 class App extends Component {
@@ -25,7 +25,11 @@ class App extends Component {
         />
         <AuthenticatedRoute exact path="/CreateDietPlan" component={DietPlan} />
         <AuthenticatedRoute exact path="/Profile" component={Profile} />
-        <AuthenticatedRoute exact path="/addWorkout" component={WorkoutAdd} />
+        <AuthenticatedRoute
+          exact
+          path="/exercise/overview"
+          component={ExerciseView}
+        />
         {/* <AuthenticatedRoute exact path="/viewWorkout" component={WorkoutView} /> */}
       </Switch>
     );

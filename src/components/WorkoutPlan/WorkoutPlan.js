@@ -17,14 +17,14 @@ const WorkoutPlan = () => {
             >
               <img className="img-fluid" src={rope} alt="" />
               <div className="card-body">
-                <h4 className="card-title">Add Workout</h4>
+                <h4 className="card-title">View Exercises</h4>
                 <p className="card-text">
                   Search for specific exercises (or create your own) and add
                   them to your personal plan!
                 </p>
-                <Link to="/addWorkout" id="addBtn" class="btn btn-secondary">
+                <Link to="/exercise/overview" id="addBtn" class="btn btn-secondary">
                   {/* <button type="button float-right" class="btn btn-secondary"> */}
-                  Add
+                  View
                 </Link>
               </div>
             </div>

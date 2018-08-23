@@ -1,15 +1,3 @@
-.container {
-  background-color: green;
-}
-
-/* .hi {
-  background-color: orange;
-}
-
-.by {
-  background-color: yellow;
-} */
-
 .card {
   margin: 0 auto; /* Added */
   float: none; /* Added */

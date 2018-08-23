@@ -1,0 +1,20 @@
+.table {
+  background-color: white;
+}
+
+.row {
+  /* background-color: green; */
+}
+
+.page-header {
+  color: black;
+  text-align: center;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
