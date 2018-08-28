@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar";
 import moduleName from "./ExerciseView.css";
+import Cardi from "./cardView";
 import {
   Container,
   Row,
   Col,
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
   UncontrolledCollapse,
   Button,
   InputGroup,
@@ -12,6 +19,17 @@ import {
   InputGroupAddon,
   Table
 } from "reactstrap";
+
+import shoulders from "./WorkoutPictures/shoulders2.jpg";
+import upperarm from "./WorkoutPictures/arms-triceps.jpg";
+import forearm from "./WorkoutPictures/forearm.jpg";
+import f2 from "./WorkoutPictures/forearm2.jpg";
+import back from "./WorkoutPictures/back.jpg";
+import waist from "./WorkoutPictures/waist.jpg";
+import legs from "./WorkoutPictures/legs.jpg";
+import neck from "./WorkoutPictures/neck.jpg";
+import chest from "./WorkoutPictures/chest.jpg";
+import cardio from "./WorkoutPictures/cardio.jpg";
 
 class ExerciseView extends Component {
   constructor(props) {
@@ -24,142 +42,90 @@ class ExerciseView extends Component {
         <Navbar loggedIn={true} />
         <Container className="mt-5">
           <Row>
-            <Col sm="8">
+            <Col sm="12">
               <h2 id="page-title" className="page-header">
                 Exercises
-              </h2>
-            </Col>
-            <Col sm="4">
-              <h2 id="page-title" className="page-header">
-                Search
               </h2>
             </Col>
           </Row>
           <br />
           <br />
           <Row>
-            <Col sm="8">
-              <Button
-                color="primary"
-                size="lg"
-                block
-                id="toggler"
-                style={{ marginBottom: "1rem" }}
-              >
-                Arms
-              </Button>
-              <UncontrolledCollapse toggler="#toggler">
-                <Table className="table">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                      <th>Username</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </UncontrolledCollapse>
-              <Button
-                color="primary"
-                size="lg"
-                block
-                id="toggler2"
-                style={{ marginBottom: "1rem" }}
-              >
-                Legs
-              </Button>
-              <UncontrolledCollapse toggler="#toggler2">
-                <h3>heyy</h3>
-              </UncontrolledCollapse>
-              <Button
-                color="primary"
-                size="lg"
-                block
-                id="toggler3"
-                style={{ marginBottom: "1rem" }}
-              >
-                Abs
-              </Button>
-              <UncontrolledCollapse toggler="#toggler3">
-                <h3>heyy</h3>
-              </UncontrolledCollapse>
-              <Button
-                color="primary"
-                size="lg"
-                block
-                id="toggler4"
-                style={{ marginBottom: "1rem" }}
-              >
-                Chest
-              </Button>
-              <UncontrolledCollapse toggler="#toggler4">
-                <h3>heyy</h3>
-              </UncontrolledCollapse>
-              <Button
-                color="primary"
-                size="lg"
-                block
-                id="toggler5"
-                style={{ marginBottom: "1rem" }}
-              >
-                Back
-              </Button>
-              <UncontrolledCollapse toggler="#toggler5">
-                <h3>heyy</h3>
-              </UncontrolledCollapse>
-              <Button
-                color="primary"
-                size="lg"
-                block
-                id="toggler6"
-                style={{ marginBottom: "1rem" }}
-              >
-                Shoulders
-              </Button>
-              <UncontrolledCollapse toggler="#toggler6">
-                <h3>heyy</h3>
-              </UncontrolledCollapse>
-              <Button
-                color="primary"
-                size="lg"
-                block
-                id="toggler7"
-                style={{ marginBottom: "1rem" }}
-              >
-                Calves
-              </Button>
-              <UncontrolledCollapse toggler="#toggler7">
-                <h3>heyy</h3>
-              </UncontrolledCollapse>
+            <Col sm="12">
+              <h4 className="page-header">
+                Select a body part to view their Exercises
+              </h4>
+            </Col>
+          </Row>
+          <br />
+          <br />
+          <Row>
+            <Col sm="4">
+              <Cardi
+                image={shoulders}
+                title={"Shoulders"}
+                description={"Train your shoulders to become boulders!"}
+              />
             </Col>
             <Col sm="4">
-              <InputGroup>
-                <Input />
-                <InputGroupAddon addonType="append">
-                  <Button color="secondary">Search</Button>
-                </InputGroupAddon>
-              </InputGroup>
+              <Cardi
+                image={back}
+                title={"Back"}
+                description={"Build a stronger and bigger back!"}
+              />
+            </Col>
+            <Col sm="4">
+              <Cardi
+                image={legs}
+                title={"Legs"}
+                description={"NEVER skip leg day!"}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm="4">
+              <Cardi
+                image={chest}
+                title={"Chest"}
+                description={"Do you even lift?"}
+              />
+            </Col>
+            <Col sm="4">
+              <Cardi
+                image={waist}
+                title={"Waist/Abs"}
+                description={"Abs are made here!"}
+              />
+            </Col>
+            <Col sm="4">
+              <Cardi
+                image={upperarm}
+                title={"Arms - Biceps/Triceps"}
+                description={"Biceps for show, Triceps for go"}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm="4">
+              <Cardi
+                image={neck}
+                title={"Traps/Neck"}
+                description={"Become a mountain"}
+              />
+            </Col>
+            <Col sm="4">
+              <Cardi
+                image={f2}
+                title={"Arms - Forearms"}
+                description={"Better grip for when you need it the most"}
+              />
+            </Col>
+            <Col sm="4">
+              <Cardi
+                image={cardio}
+                title={"Cardio"}
+                description={"Better your heart"}
+              />
             </Col>
           </Row>
         </Container>

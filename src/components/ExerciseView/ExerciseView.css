@@ -1,9 +1,5 @@
-.table {
-  background-color: white;
-}
-
-.row {
-  /* background-color: green; */
+.rw {
+  background-color: green;
 }
 
 .page-header {
@@ -17,4 +13,8 @@
   width: 100%;
   color: white;
   text-align: center;
+}
+
+.viewButton {
+  background-color: orange;
 }
