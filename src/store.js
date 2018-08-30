@@ -23,7 +23,8 @@ store.subscribe(
   throttle(() => {
     saveState({
       auth: store.getState().auth,
-      profile: store.getState().profile
+      profile: store.getState().profile,
+      exercise: store.getState().exercise
     });
   }, 1000)
 );

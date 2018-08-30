@@ -8,6 +8,7 @@ import Profile from "./components/Profile/Profile";
 import WorkoutPlan from "./components/WorkoutPlan/WorkoutPlan";
 import DietPlan from "./components/DietPlan/DietPlan";
 import ExerciseView from "../src/components/ExerciseView/ExerciseView";
+import workoutTable from "./components/WorkoutTable/workoutTable";
 import "./App.css";
 
 class App extends Component {
@@ -29,6 +30,11 @@ class App extends Component {
           exact
           path="/exercise/overview"
           component={ExerciseView}
+        />
+        <AuthenticatedRoute
+          exact
+          path="/WorkoutTable/:muscle"
+          component={workoutTable}
         />
         {/* <AuthenticatedRoute exact path="/viewWorkout" component={WorkoutView} /> */}
       </Switch>

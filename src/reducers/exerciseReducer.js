@@ -1,8 +1,7 @@
 import { FETCH_EXERCISE_TABLE } from "../actions/types";
 
 const initalState = {
-  muscle: "",
-  exercise: ""
+  muscle: ""
 };
 
 export default function(state = initalState, action) {
@@ -12,7 +11,6 @@ export default function(state = initalState, action) {
       return {
         ...state,
         muscle: action.payload,
-        exercise: null
       };
     default:
       return state;
