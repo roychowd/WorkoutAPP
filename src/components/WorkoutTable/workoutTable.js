@@ -79,7 +79,7 @@ class workoutTable extends Component {
                 className="btn-primary"
                 onClick={() => this.openModal(elem)}
               >
-                Open Modal
+                View Exercise
               </button>
             </div>
           </a>
@@ -107,12 +107,14 @@ class workoutTable extends Component {
               onRequestClose={this.closeModal}
               style={customStyles}
               contentLabel="Example Modal"
+              className="modal-content"
             >
               <h2 ref={subtitle => (this.subtitle = subtitle)}>
                 {this.state.exerciseName}
               </h2>
               <button onClick={this.closeModal}>close</button>
               <div>{this.state.exerciseComment}</div>
+              <button>Add to WorkoutPlan</button>
             </Modal>
           </div>
           <br />
