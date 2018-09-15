@@ -89,9 +89,9 @@ const Dashboard = props => {
           </Link>
         </div>
       </div>
-      <div class="footer bg-dark">
+      {/* <div class="footer bg-dark">
         <p>Footer</p>
-      </div>
+      </div> */}
     </div>
   );
 };
