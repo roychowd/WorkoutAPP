@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Homepage from "./components/Homepage/Homepage";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -7,6 +6,9 @@ import Signup from "./components/Signup/Signup";
 import Initialcalorie from "./components/Initialcalorie/Initialcalorie";
 import Profile from "./components/Profile/Profile";
 import WorkoutPlan from "./components/WorkoutPlan/WorkoutPlan";
+import DietPlan from "./components/DietPlan/DietPlan";
+import ExerciseView from "../src/components/ExerciseView/ExerciseView";
+import workoutTable from "./components/WorkoutTable/workoutTable";
 import "./App.css";
 
 class App extends Component {
@@ -17,8 +19,24 @@ class App extends Component {
         <AuthenticatedRoute path="/Dashboard" component={Dashboard} />
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/Initialcalorie" component={Initialcalorie} />
-        <AuthenticatedRoute exact path="/CreateWorkPlan" component={WorkoutPlan}/>
+        <AuthenticatedRoute
+          exact
+          path="/CreateWorkPlan"
+          component={WorkoutPlan}
+        />
+        <AuthenticatedRoute exact path="/CreateDietPlan" component={DietPlan} />
         <AuthenticatedRoute exact path="/Profile" component={Profile} />
+        <AuthenticatedRoute
+          exact
+          path="/exercise/overview"
+          component={ExerciseView}
+        />
+        <AuthenticatedRoute
+          exact
+          path="/WorkoutTable/:muscle"
+          component={workoutTable}
+        />
+        {/* <AuthenticatedRoute exact path="/viewWorkout" component={WorkoutView} /> */}
       </Switch>
     );
   }
